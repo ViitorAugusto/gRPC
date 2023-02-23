@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package comunication;
+
+service ComunicationService {
+    rpc findOne(ComunicationDTO) returns (Comunication) {}
+    rpc create(ComunicationData) returns (Comunication) {}
+}
+
+message ComunicationData {
+    string name = 2;
+    string email = 3;
+}
+
+message Comunication {
+    int32 id = 1;
+    string name = 2;
+    string email = 3;
+}
+
+message ComunicationDTO {
+    int32 id = 1;
+}
